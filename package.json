@@ -13,6 +13,8 @@
     "autoprefixer": "^10.1.0",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2",
+    "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-pseudo-elements": "^1.5.1",
     "three": "^0.123.0"
   }
 }
