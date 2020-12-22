@@ -13,11 +13,11 @@ $(document).ready(function () {
             window.innerWidth / window.innerHeight, 0.1,1000);
 
         renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, 100);
         camera.position.set(0,0,0);
 
         snowGeo = new THREE.Geometry();
-        for (let i = 0; i < 4000; i++) {
+        for (let i = 0; i < 2000; i++) {
             let snow = new THREE.Vector3(
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300,
@@ -29,7 +29,7 @@ $(document).ready(function () {
         let snowSprite = new THREE.TextureLoader().load('src/main/webapp/img/Snowflake-2.png');
         let snowMaterial = new THREE.PointsMaterial({
             color: 0xffffff,
-            size: 2,
+            size: 5,
             map: snowSprite
         });
         snowflakes = new THREE.Points(snowGeo, snowMaterial);
@@ -50,9 +50,9 @@ $(document).ready(function () {
     }
 
     const onResize = () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.aspect = window.innerWidth / 100;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, 100);
     }
 
     $(window).on("resize", onResize);

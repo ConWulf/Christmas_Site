@@ -6,4 +6,8 @@
     @apply text-lg text-green-600
 }
 
+.main-bg::before {
+    @apply empty-content bg-ornament bg-cover absolute inset-0 z-behind opacity-50
+}
+
 @tailwind utilities;

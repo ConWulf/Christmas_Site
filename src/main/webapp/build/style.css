@@ -553,6 +553,19 @@ video {
   color: rgba(5, 150, 105, var(--tw-text-opacity))
 }
 
+.main-bg::before {
+  background-image: url(../img/pexels-char-1263891.jpg);
+  background-size: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -5;
+  content: ''
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -2944,7 +2957,7 @@ video {
 }
 
 .bg-ornament {
-  background-image: url(../img/pexels-negative-space-177555.jpg);
+  background-image: url(../img/pexels-char-1263891.jpg);
 }
 
 .from-transparent {
@@ -22801,6 +22814,38 @@ video {
   text-align: justify;
 }
 
+.text-0 {
+  color: responsive;
+}
+
+.text-1 {
+  color: hover;
+}
+
+.text-2 {
+  color: focus;
+}
+
+.text-3 {
+  color: before;
+}
+
+.text-4 {
+  color: after;
+}
+
+.text-5 {
+  color: hover_before;
+}
+
+.text-6 {
+  color: hover_after;
+}
+
+.text-7 {
+  color: focus_before;
+}
+
 .text-transparent {
   color: transparent;
 }
@@ -23217,6 +23262,38 @@ video {
 .text-pink-900 {
   --tw-text-opacity: 1;
   color: rgba(131, 24, 67, var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-0 {
+  color: responsive;
+}
+
+.group:hover .group-hover\:text-1 {
+  color: hover;
+}
+
+.group:hover .group-hover\:text-2 {
+  color: focus;
+}
+
+.group:hover .group-hover\:text-3 {
+  color: before;
+}
+
+.group:hover .group-hover\:text-4 {
+  color: after;
+}
+
+.group:hover .group-hover\:text-5 {
+  color: hover_before;
+}
+
+.group:hover .group-hover\:text-6 {
+  color: hover_after;
+}
+
+.group:hover .group-hover\:text-7 {
+  color: focus_before;
 }
 
 .group:hover .group-hover\:text-transparent {
@@ -23637,6 +23714,38 @@ video {
   color: rgba(131, 24, 67, var(--tw-text-opacity));
 }
 
+.focus-within\:text-0:focus-within {
+  color: responsive;
+}
+
+.focus-within\:text-1:focus-within {
+  color: hover;
+}
+
+.focus-within\:text-2:focus-within {
+  color: focus;
+}
+
+.focus-within\:text-3:focus-within {
+  color: before;
+}
+
+.focus-within\:text-4:focus-within {
+  color: after;
+}
+
+.focus-within\:text-5:focus-within {
+  color: hover_before;
+}
+
+.focus-within\:text-6:focus-within {
+  color: hover_after;
+}
+
+.focus-within\:text-7:focus-within {
+  color: focus_before;
+}
+
 .focus-within\:text-transparent:focus-within {
   color: transparent;
 }
@@ -24055,6 +24164,38 @@ video {
   color: rgba(131, 24, 67, var(--tw-text-opacity));
 }
 
+.hover\:text-0:hover {
+  color: responsive;
+}
+
+.hover\:text-1:hover {
+  color: hover;
+}
+
+.hover\:text-2:hover {
+  color: focus;
+}
+
+.hover\:text-3:hover {
+  color: before;
+}
+
+.hover\:text-4:hover {
+  color: after;
+}
+
+.hover\:text-5:hover {
+  color: hover_before;
+}
+
+.hover\:text-6:hover {
+  color: hover_after;
+}
+
+.hover\:text-7:hover {
+  color: focus_before;
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -24471,6 +24612,38 @@ video {
 .hover\:text-pink-900:hover {
   --tw-text-opacity: 1;
   color: rgba(131, 24, 67, var(--tw-text-opacity));
+}
+
+.focus\:text-0:focus {
+  color: responsive;
+}
+
+.focus\:text-1:focus {
+  color: hover;
+}
+
+.focus\:text-2:focus {
+  color: focus;
+}
+
+.focus\:text-3:focus {
+  color: before;
+}
+
+.focus\:text-4:focus {
+  color: after;
+}
+
+.focus\:text-5:focus {
+  color: hover_before;
+}
+
+.focus\:text-6:focus {
+  color: hover_after;
+}
+
+.focus\:text-7:focus {
+  color: focus_before;
 }
 
 .focus\:text-transparent:focus {
@@ -25732,12 +25905,24 @@ video {
   z-index: -5;
 }
 
+.z-between {
+  z-index: -3;
+}
+
 .focus-within\:z-behind:focus-within {
   z-index: -5;
 }
 
+.focus-within\:z-between:focus-within {
+  z-index: -3;
+}
+
 .focus\:z-behind:focus {
   z-index: -5;
+}
+
+.focus\:z-between:focus {
+  z-index: -3;
 }
 
 .gap-0 {
@@ -29738,6 +29923,470 @@ video {
           animation: bounce 1s infinite;
 }
 
+.content-before::before {
+  content: attr(tw-content-before);
+}
+
+.content-active-before:active::before {
+  content: attr(tw-content-active-before);
+}
+
+.content-any-link-before:-webkit-any-link::before {
+  content: attr(tw-content-any-link-before);
+}
+
+.content-any-link-before:-moz-any-link::before {
+  content: attr(tw-content-any-link-before);
+}
+
+.content-any-link-before:any-link::before {
+  content: attr(tw-content-any-link-before);
+}
+
+.content-blank-before:blank::before {
+  content: attr(tw-content-blank-before);
+}
+
+.content-checked-before:checked::before {
+  content: attr(tw-content-checked-before);
+}
+
+.content-current-before:current::before {
+  content: attr(tw-content-current-before);
+}
+
+.content-default-before:default::before {
+  content: attr(tw-content-default-before);
+}
+
+.content-defined-before:defined::before {
+  content: attr(tw-content-defined-before);
+}
+
+.content-disabled-before:disabled::before {
+  content: attr(tw-content-disabled-before);
+}
+
+.content-empty-before:empty::before {
+  content: attr(tw-content-empty-before);
+}
+
+.content-enabled-before:enabled::before {
+  content: attr(tw-content-enabled-before);
+}
+
+.content-first-before:first::before {
+  content: attr(tw-content-first-before);
+}
+
+.content-first-child-before:first-child::before {
+  content: attr(tw-content-first-child-before);
+}
+
+.content-first-of-type-before:first-of-type::before {
+  content: attr(tw-content-first-of-type-before);
+}
+
+.content-fullscreen-before:-webkit-full-screen::before {
+  content: attr(tw-content-fullscreen-before);
+}
+
+.content-fullscreen-before:-ms-fullscreen::before {
+  content: attr(tw-content-fullscreen-before);
+}
+
+.content-fullscreen-before:fullscreen::before {
+  content: attr(tw-content-fullscreen-before);
+}
+
+.content-future-before:future::before {
+  content: attr(tw-content-future-before);
+}
+
+.content-focus-before:focus::before {
+  content: attr(tw-content-focus-before);
+}
+
+.content-focus-visible-before:focus-visible::before {
+  content: attr(tw-content-focus-visible-before);
+}
+
+.content-focus-within-before:focus-within::before {
+  content: attr(tw-content-focus-within-before);
+}
+
+.content-host-before:host::before {
+  content: attr(tw-content-host-before);
+}
+
+.content-hover-before:hover::before {
+  content: attr(tw-content-hover-before);
+}
+
+.content-indeterminate-before:indeterminate::before {
+  content: attr(tw-content-indeterminate-before);
+}
+
+.content-in-range-before:in-range::before {
+  content: attr(tw-content-in-range-before);
+}
+
+.content-invalid-before:invalid::before {
+  content: attr(tw-content-invalid-before);
+}
+
+.content-last-child-before:last-child::before {
+  content: attr(tw-content-last-child-before);
+}
+
+.content-last-of-type-before:last-of-type::before {
+  content: attr(tw-content-last-of-type-before);
+}
+
+.content-left-before:left::before {
+  content: attr(tw-content-left-before);
+}
+
+.content-link-before:link::before {
+  content: attr(tw-content-link-before);
+}
+
+.content-local-link-before:local-link::before {
+  content: attr(tw-content-local-link-before);
+}
+
+.content-only-child-before:only-child::before {
+  content: attr(tw-content-only-child-before);
+}
+
+.content-only-of-type-before:only-of-type::before {
+  content: attr(tw-content-only-of-type-before);
+}
+
+.content-optional-before:optional::before {
+  content: attr(tw-content-optional-before);
+}
+
+.content-out-of-range-before:out-of-range::before {
+  content: attr(tw-content-out-of-range-before);
+}
+
+.content-past-before:past::before {
+  content: attr(tw-content-past-before);
+}
+
+.content-picture-in-picture-before:picture-in-picture::before {
+  content: attr(tw-content-picture-in-picture-before);
+}
+
+.content-placeholder-shown-before:-moz-placeholder-shown::before {
+  content: attr(tw-content-placeholder-shown-before);
+}
+
+.content-placeholder-shown-before:-ms-input-placeholder::before {
+  content: attr(tw-content-placeholder-shown-before);
+}
+
+.content-placeholder-shown-before:placeholder-shown::before {
+  content: attr(tw-content-placeholder-shown-before);
+}
+
+.content-paused-before:paused::before {
+  content: attr(tw-content-paused-before);
+}
+
+.content-playing-before:playing::before {
+  content: attr(tw-content-playing-before);
+}
+
+.content-read-only-before:-moz-read-only::before {
+  content: attr(tw-content-read-only-before);
+}
+
+.content-read-only-before:read-only::before {
+  content: attr(tw-content-read-only-before);
+}
+
+.content-read-write-before:-moz-read-write::before {
+  content: attr(tw-content-read-write-before);
+}
+
+.content-read-write-before:read-write::before {
+  content: attr(tw-content-read-write-before);
+}
+
+.content-required-before:required::before {
+  content: attr(tw-content-required-before);
+}
+
+.content-right-before:right::before {
+  content: attr(tw-content-right-before);
+}
+
+.content-root-before:root::before {
+  content: attr(tw-content-root-before);
+}
+
+.content-scope-before:scope::before {
+  content: attr(tw-content-scope-before);
+}
+
+.content-target-before:target::before {
+  content: attr(tw-content-target-before);
+}
+
+.content-target-within-before:target-within::before {
+  content: attr(tw-content-target-within-before);
+}
+
+.content-user-invalid-before:user-invalid::before {
+  content: attr(tw-content-user-invalid-before);
+}
+
+.content-valid-before:valid::before {
+  content: attr(tw-content-valid-before);
+}
+
+.content-visited-before:visited::before {
+  content: attr(tw-content-visited-before);
+}
+
+.content-after::after {
+  content: attr(tw-content-after);
+}
+
+.content-active-after:active::after {
+  content: attr(tw-content-active-after);
+}
+
+.content-any-link-after:-webkit-any-link::after {
+  content: attr(tw-content-any-link-after);
+}
+
+.content-any-link-after:-moz-any-link::after {
+  content: attr(tw-content-any-link-after);
+}
+
+.content-any-link-after:any-link::after {
+  content: attr(tw-content-any-link-after);
+}
+
+.content-blank-after:blank::after {
+  content: attr(tw-content-blank-after);
+}
+
+.content-checked-after:checked::after {
+  content: attr(tw-content-checked-after);
+}
+
+.content-current-after:current::after {
+  content: attr(tw-content-current-after);
+}
+
+.content-default-after:default::after {
+  content: attr(tw-content-default-after);
+}
+
+.content-defined-after:defined::after {
+  content: attr(tw-content-defined-after);
+}
+
+.content-disabled-after:disabled::after {
+  content: attr(tw-content-disabled-after);
+}
+
+.content-empty-after:empty::after {
+  content: attr(tw-content-empty-after);
+}
+
+.content-enabled-after:enabled::after {
+  content: attr(tw-content-enabled-after);
+}
+
+.content-first-after:first::after {
+  content: attr(tw-content-first-after);
+}
+
+.content-first-child-after:first-child::after {
+  content: attr(tw-content-first-child-after);
+}
+
+.content-first-of-type-after:first-of-type::after {
+  content: attr(tw-content-first-of-type-after);
+}
+
+.content-fullscreen-after:-webkit-full-screen::after {
+  content: attr(tw-content-fullscreen-after);
+}
+
+.content-fullscreen-after:-ms-fullscreen::after {
+  content: attr(tw-content-fullscreen-after);
+}
+
+.content-fullscreen-after:fullscreen::after {
+  content: attr(tw-content-fullscreen-after);
+}
+
+.content-future-after:future::after {
+  content: attr(tw-content-future-after);
+}
+
+.content-focus-after:focus::after {
+  content: attr(tw-content-focus-after);
+}
+
+.content-focus-visible-after:focus-visible::after {
+  content: attr(tw-content-focus-visible-after);
+}
+
+.content-focus-within-after:focus-within::after {
+  content: attr(tw-content-focus-within-after);
+}
+
+.content-host-after:host::after {
+  content: attr(tw-content-host-after);
+}
+
+.content-hover-after:hover::after {
+  content: attr(tw-content-hover-after);
+}
+
+.content-indeterminate-after:indeterminate::after {
+  content: attr(tw-content-indeterminate-after);
+}
+
+.content-in-range-after:in-range::after {
+  content: attr(tw-content-in-range-after);
+}
+
+.content-invalid-after:invalid::after {
+  content: attr(tw-content-invalid-after);
+}
+
+.content-last-child-after:last-child::after {
+  content: attr(tw-content-last-child-after);
+}
+
+.content-last-of-type-after:last-of-type::after {
+  content: attr(tw-content-last-of-type-after);
+}
+
+.content-left-after:left::after {
+  content: attr(tw-content-left-after);
+}
+
+.content-link-after:link::after {
+  content: attr(tw-content-link-after);
+}
+
+.content-local-link-after:local-link::after {
+  content: attr(tw-content-local-link-after);
+}
+
+.content-only-child-after:only-child::after {
+  content: attr(tw-content-only-child-after);
+}
+
+.content-only-of-type-after:only-of-type::after {
+  content: attr(tw-content-only-of-type-after);
+}
+
+.content-optional-after:optional::after {
+  content: attr(tw-content-optional-after);
+}
+
+.content-out-of-range-after:out-of-range::after {
+  content: attr(tw-content-out-of-range-after);
+}
+
+.content-past-after:past::after {
+  content: attr(tw-content-past-after);
+}
+
+.content-picture-in-picture-after:picture-in-picture::after {
+  content: attr(tw-content-picture-in-picture-after);
+}
+
+.content-placeholder-shown-after:-moz-placeholder-shown::after {
+  content: attr(tw-content-placeholder-shown-after);
+}
+
+.content-placeholder-shown-after:-ms-input-placeholder::after {
+  content: attr(tw-content-placeholder-shown-after);
+}
+
+.content-placeholder-shown-after:placeholder-shown::after {
+  content: attr(tw-content-placeholder-shown-after);
+}
+
+.content-paused-after:paused::after {
+  content: attr(tw-content-paused-after);
+}
+
+.content-playing-after:playing::after {
+  content: attr(tw-content-playing-after);
+}
+
+.content-read-only-after:-moz-read-only::after {
+  content: attr(tw-content-read-only-after);
+}
+
+.content-read-only-after:read-only::after {
+  content: attr(tw-content-read-only-after);
+}
+
+.content-read-write-after:-moz-read-write::after {
+  content: attr(tw-content-read-write-after);
+}
+
+.content-read-write-after:read-write::after {
+  content: attr(tw-content-read-write-after);
+}
+
+.content-required-after:required::after {
+  content: attr(tw-content-required-after);
+}
+
+.content-right-after:right::after {
+  content: attr(tw-content-right-after);
+}
+
+.content-root-after:root::after {
+  content: attr(tw-content-root-after);
+}
+
+.content-scope-after:scope::after {
+  content: attr(tw-content-scope-after);
+}
+
+.content-target-after:target::after {
+  content: attr(tw-content-target-after);
+}
+
+.content-target-within-after:target-within::after {
+  content: attr(tw-content-target-within-after);
+}
+
+.content-user-invalid-after:user-invalid::after {
+  content: attr(tw-content-user-invalid-after);
+}
+
+.content-valid-after:valid::after {
+  content: attr(tw-content-valid-after);
+}
+
+.content-visited-after:visited::after {
+  content: attr(tw-content-visited-after);
+}
+
+.empty-content {
+  content: '';
+}
+
+.before\:empty-content::before {
+  content: '';
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -31294,7 +31943,7 @@ video {
   }
 
   .sm\:bg-ornament {
-    background-image: url(../img/pexels-negative-space-177555.jpg);
+    background-image: url(../img/pexels-char-1263891.jpg);
   }
 
   .sm\:from-transparent {
@@ -51138,6 +51787,38 @@ video {
     text-align: justify;
   }
 
+  .sm\:text-0 {
+    color: responsive;
+  }
+
+  .sm\:text-1 {
+    color: hover;
+  }
+
+  .sm\:text-2 {
+    color: focus;
+  }
+
+  .sm\:text-3 {
+    color: before;
+  }
+
+  .sm\:text-4 {
+    color: after;
+  }
+
+  .sm\:text-5 {
+    color: hover_before;
+  }
+
+  .sm\:text-6 {
+    color: hover_after;
+  }
+
+  .sm\:text-7 {
+    color: focus_before;
+  }
+
   .sm\:text-transparent {
     color: transparent;
   }
@@ -51554,6 +52235,38 @@ video {
   .sm\:text-pink-900 {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:text-0 {
+    color: responsive;
+  }
+
+  .group:hover .sm\:group-hover\:text-1 {
+    color: hover;
+  }
+
+  .group:hover .sm\:group-hover\:text-2 {
+    color: focus;
+  }
+
+  .group:hover .sm\:group-hover\:text-3 {
+    color: before;
+  }
+
+  .group:hover .sm\:group-hover\:text-4 {
+    color: after;
+  }
+
+  .group:hover .sm\:group-hover\:text-5 {
+    color: hover_before;
+  }
+
+  .group:hover .sm\:group-hover\:text-6 {
+    color: hover_after;
+  }
+
+  .group:hover .sm\:group-hover\:text-7 {
+    color: focus_before;
   }
 
   .group:hover .sm\:group-hover\:text-transparent {
@@ -51974,6 +52687,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .sm\:focus-within\:text-0:focus-within {
+    color: responsive;
+  }
+
+  .sm\:focus-within\:text-1:focus-within {
+    color: hover;
+  }
+
+  .sm\:focus-within\:text-2:focus-within {
+    color: focus;
+  }
+
+  .sm\:focus-within\:text-3:focus-within {
+    color: before;
+  }
+
+  .sm\:focus-within\:text-4:focus-within {
+    color: after;
+  }
+
+  .sm\:focus-within\:text-5:focus-within {
+    color: hover_before;
+  }
+
+  .sm\:focus-within\:text-6:focus-within {
+    color: hover_after;
+  }
+
+  .sm\:focus-within\:text-7:focus-within {
+    color: focus_before;
+  }
+
   .sm\:focus-within\:text-transparent:focus-within {
     color: transparent;
   }
@@ -52392,6 +53137,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .sm\:hover\:text-0:hover {
+    color: responsive;
+  }
+
+  .sm\:hover\:text-1:hover {
+    color: hover;
+  }
+
+  .sm\:hover\:text-2:hover {
+    color: focus;
+  }
+
+  .sm\:hover\:text-3:hover {
+    color: before;
+  }
+
+  .sm\:hover\:text-4:hover {
+    color: after;
+  }
+
+  .sm\:hover\:text-5:hover {
+    color: hover_before;
+  }
+
+  .sm\:hover\:text-6:hover {
+    color: hover_after;
+  }
+
+  .sm\:hover\:text-7:hover {
+    color: focus_before;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -52808,6 +53585,38 @@ video {
   .sm\:hover\:text-pink-900:hover {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .sm\:focus\:text-0:focus {
+    color: responsive;
+  }
+
+  .sm\:focus\:text-1:focus {
+    color: hover;
+  }
+
+  .sm\:focus\:text-2:focus {
+    color: focus;
+  }
+
+  .sm\:focus\:text-3:focus {
+    color: before;
+  }
+
+  .sm\:focus\:text-4:focus {
+    color: after;
+  }
+
+  .sm\:focus\:text-5:focus {
+    color: hover_before;
+  }
+
+  .sm\:focus\:text-6:focus {
+    color: hover_after;
+  }
+
+  .sm\:focus\:text-7:focus {
+    color: focus_before;
   }
 
   .sm\:focus\:text-transparent:focus {
@@ -54069,12 +54878,24 @@ video {
     z-index: -5;
   }
 
+  .sm\:z-between {
+    z-index: -3;
+  }
+
   .sm\:focus-within\:z-behind:focus-within {
     z-index: -5;
   }
 
+  .sm\:focus-within\:z-between:focus-within {
+    z-index: -3;
+  }
+
   .sm\:focus\:z-behind:focus {
     z-index: -5;
+  }
+
+  .sm\:focus\:z-between:focus {
+    z-index: -3;
   }
 
   .sm\:gap-0 {
@@ -59566,7 +60387,7 @@ video {
   }
 
   .md\:bg-ornament {
-    background-image: url(../img/pexels-negative-space-177555.jpg);
+    background-image: url(../img/pexels-char-1263891.jpg);
   }
 
   .md\:from-transparent {
@@ -79410,6 +80231,38 @@ video {
     text-align: justify;
   }
 
+  .md\:text-0 {
+    color: responsive;
+  }
+
+  .md\:text-1 {
+    color: hover;
+  }
+
+  .md\:text-2 {
+    color: focus;
+  }
+
+  .md\:text-3 {
+    color: before;
+  }
+
+  .md\:text-4 {
+    color: after;
+  }
+
+  .md\:text-5 {
+    color: hover_before;
+  }
+
+  .md\:text-6 {
+    color: hover_after;
+  }
+
+  .md\:text-7 {
+    color: focus_before;
+  }
+
   .md\:text-transparent {
     color: transparent;
   }
@@ -79826,6 +80679,38 @@ video {
   .md\:text-pink-900 {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .group:hover .md\:group-hover\:text-0 {
+    color: responsive;
+  }
+
+  .group:hover .md\:group-hover\:text-1 {
+    color: hover;
+  }
+
+  .group:hover .md\:group-hover\:text-2 {
+    color: focus;
+  }
+
+  .group:hover .md\:group-hover\:text-3 {
+    color: before;
+  }
+
+  .group:hover .md\:group-hover\:text-4 {
+    color: after;
+  }
+
+  .group:hover .md\:group-hover\:text-5 {
+    color: hover_before;
+  }
+
+  .group:hover .md\:group-hover\:text-6 {
+    color: hover_after;
+  }
+
+  .group:hover .md\:group-hover\:text-7 {
+    color: focus_before;
   }
 
   .group:hover .md\:group-hover\:text-transparent {
@@ -80246,6 +81131,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .md\:focus-within\:text-0:focus-within {
+    color: responsive;
+  }
+
+  .md\:focus-within\:text-1:focus-within {
+    color: hover;
+  }
+
+  .md\:focus-within\:text-2:focus-within {
+    color: focus;
+  }
+
+  .md\:focus-within\:text-3:focus-within {
+    color: before;
+  }
+
+  .md\:focus-within\:text-4:focus-within {
+    color: after;
+  }
+
+  .md\:focus-within\:text-5:focus-within {
+    color: hover_before;
+  }
+
+  .md\:focus-within\:text-6:focus-within {
+    color: hover_after;
+  }
+
+  .md\:focus-within\:text-7:focus-within {
+    color: focus_before;
+  }
+
   .md\:focus-within\:text-transparent:focus-within {
     color: transparent;
   }
@@ -80664,6 +81581,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .md\:hover\:text-0:hover {
+    color: responsive;
+  }
+
+  .md\:hover\:text-1:hover {
+    color: hover;
+  }
+
+  .md\:hover\:text-2:hover {
+    color: focus;
+  }
+
+  .md\:hover\:text-3:hover {
+    color: before;
+  }
+
+  .md\:hover\:text-4:hover {
+    color: after;
+  }
+
+  .md\:hover\:text-5:hover {
+    color: hover_before;
+  }
+
+  .md\:hover\:text-6:hover {
+    color: hover_after;
+  }
+
+  .md\:hover\:text-7:hover {
+    color: focus_before;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -81080,6 +82029,38 @@ video {
   .md\:hover\:text-pink-900:hover {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .md\:focus\:text-0:focus {
+    color: responsive;
+  }
+
+  .md\:focus\:text-1:focus {
+    color: hover;
+  }
+
+  .md\:focus\:text-2:focus {
+    color: focus;
+  }
+
+  .md\:focus\:text-3:focus {
+    color: before;
+  }
+
+  .md\:focus\:text-4:focus {
+    color: after;
+  }
+
+  .md\:focus\:text-5:focus {
+    color: hover_before;
+  }
+
+  .md\:focus\:text-6:focus {
+    color: hover_after;
+  }
+
+  .md\:focus\:text-7:focus {
+    color: focus_before;
   }
 
   .md\:focus\:text-transparent:focus {
@@ -82341,12 +83322,24 @@ video {
     z-index: -5;
   }
 
+  .md\:z-between {
+    z-index: -3;
+  }
+
   .md\:focus-within\:z-behind:focus-within {
     z-index: -5;
   }
 
+  .md\:focus-within\:z-between:focus-within {
+    z-index: -3;
+  }
+
   .md\:focus\:z-behind:focus {
     z-index: -5;
+  }
+
+  .md\:focus\:z-between:focus {
+    z-index: -3;
   }
 
   .md\:gap-0 {
@@ -87838,7 +88831,7 @@ video {
   }
 
   .lg\:bg-ornament {
-    background-image: url(../img/pexels-negative-space-177555.jpg);
+    background-image: url(../img/pexels-char-1263891.jpg);
   }
 
   .lg\:from-transparent {
@@ -107682,6 +108675,38 @@ video {
     text-align: justify;
   }
 
+  .lg\:text-0 {
+    color: responsive;
+  }
+
+  .lg\:text-1 {
+    color: hover;
+  }
+
+  .lg\:text-2 {
+    color: focus;
+  }
+
+  .lg\:text-3 {
+    color: before;
+  }
+
+  .lg\:text-4 {
+    color: after;
+  }
+
+  .lg\:text-5 {
+    color: hover_before;
+  }
+
+  .lg\:text-6 {
+    color: hover_after;
+  }
+
+  .lg\:text-7 {
+    color: focus_before;
+  }
+
   .lg\:text-transparent {
     color: transparent;
   }
@@ -108098,6 +109123,38 @@ video {
   .lg\:text-pink-900 {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-0 {
+    color: responsive;
+  }
+
+  .group:hover .lg\:group-hover\:text-1 {
+    color: hover;
+  }
+
+  .group:hover .lg\:group-hover\:text-2 {
+    color: focus;
+  }
+
+  .group:hover .lg\:group-hover\:text-3 {
+    color: before;
+  }
+
+  .group:hover .lg\:group-hover\:text-4 {
+    color: after;
+  }
+
+  .group:hover .lg\:group-hover\:text-5 {
+    color: hover_before;
+  }
+
+  .group:hover .lg\:group-hover\:text-6 {
+    color: hover_after;
+  }
+
+  .group:hover .lg\:group-hover\:text-7 {
+    color: focus_before;
   }
 
   .group:hover .lg\:group-hover\:text-transparent {
@@ -108518,6 +109575,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .lg\:focus-within\:text-0:focus-within {
+    color: responsive;
+  }
+
+  .lg\:focus-within\:text-1:focus-within {
+    color: hover;
+  }
+
+  .lg\:focus-within\:text-2:focus-within {
+    color: focus;
+  }
+
+  .lg\:focus-within\:text-3:focus-within {
+    color: before;
+  }
+
+  .lg\:focus-within\:text-4:focus-within {
+    color: after;
+  }
+
+  .lg\:focus-within\:text-5:focus-within {
+    color: hover_before;
+  }
+
+  .lg\:focus-within\:text-6:focus-within {
+    color: hover_after;
+  }
+
+  .lg\:focus-within\:text-7:focus-within {
+    color: focus_before;
+  }
+
   .lg\:focus-within\:text-transparent:focus-within {
     color: transparent;
   }
@@ -108936,6 +110025,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .lg\:hover\:text-0:hover {
+    color: responsive;
+  }
+
+  .lg\:hover\:text-1:hover {
+    color: hover;
+  }
+
+  .lg\:hover\:text-2:hover {
+    color: focus;
+  }
+
+  .lg\:hover\:text-3:hover {
+    color: before;
+  }
+
+  .lg\:hover\:text-4:hover {
+    color: after;
+  }
+
+  .lg\:hover\:text-5:hover {
+    color: hover_before;
+  }
+
+  .lg\:hover\:text-6:hover {
+    color: hover_after;
+  }
+
+  .lg\:hover\:text-7:hover {
+    color: focus_before;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -109352,6 +110473,38 @@ video {
   .lg\:hover\:text-pink-900:hover {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .lg\:focus\:text-0:focus {
+    color: responsive;
+  }
+
+  .lg\:focus\:text-1:focus {
+    color: hover;
+  }
+
+  .lg\:focus\:text-2:focus {
+    color: focus;
+  }
+
+  .lg\:focus\:text-3:focus {
+    color: before;
+  }
+
+  .lg\:focus\:text-4:focus {
+    color: after;
+  }
+
+  .lg\:focus\:text-5:focus {
+    color: hover_before;
+  }
+
+  .lg\:focus\:text-6:focus {
+    color: hover_after;
+  }
+
+  .lg\:focus\:text-7:focus {
+    color: focus_before;
   }
 
   .lg\:focus\:text-transparent:focus {
@@ -110613,12 +111766,24 @@ video {
     z-index: -5;
   }
 
+  .lg\:z-between {
+    z-index: -3;
+  }
+
   .lg\:focus-within\:z-behind:focus-within {
     z-index: -5;
   }
 
+  .lg\:focus-within\:z-between:focus-within {
+    z-index: -3;
+  }
+
   .lg\:focus\:z-behind:focus {
     z-index: -5;
+  }
+
+  .lg\:focus\:z-between:focus {
+    z-index: -3;
   }
 
   .lg\:gap-0 {
@@ -116110,7 +117275,7 @@ video {
   }
 
   .xl\:bg-ornament {
-    background-image: url(../img/pexels-negative-space-177555.jpg);
+    background-image: url(../img/pexels-char-1263891.jpg);
   }
 
   .xl\:from-transparent {
@@ -135954,6 +137119,38 @@ video {
     text-align: justify;
   }
 
+  .xl\:text-0 {
+    color: responsive;
+  }
+
+  .xl\:text-1 {
+    color: hover;
+  }
+
+  .xl\:text-2 {
+    color: focus;
+  }
+
+  .xl\:text-3 {
+    color: before;
+  }
+
+  .xl\:text-4 {
+    color: after;
+  }
+
+  .xl\:text-5 {
+    color: hover_before;
+  }
+
+  .xl\:text-6 {
+    color: hover_after;
+  }
+
+  .xl\:text-7 {
+    color: focus_before;
+  }
+
   .xl\:text-transparent {
     color: transparent;
   }
@@ -136370,6 +137567,38 @@ video {
   .xl\:text-pink-900 {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:text-0 {
+    color: responsive;
+  }
+
+  .group:hover .xl\:group-hover\:text-1 {
+    color: hover;
+  }
+
+  .group:hover .xl\:group-hover\:text-2 {
+    color: focus;
+  }
+
+  .group:hover .xl\:group-hover\:text-3 {
+    color: before;
+  }
+
+  .group:hover .xl\:group-hover\:text-4 {
+    color: after;
+  }
+
+  .group:hover .xl\:group-hover\:text-5 {
+    color: hover_before;
+  }
+
+  .group:hover .xl\:group-hover\:text-6 {
+    color: hover_after;
+  }
+
+  .group:hover .xl\:group-hover\:text-7 {
+    color: focus_before;
   }
 
   .group:hover .xl\:group-hover\:text-transparent {
@@ -136790,6 +138019,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .xl\:focus-within\:text-0:focus-within {
+    color: responsive;
+  }
+
+  .xl\:focus-within\:text-1:focus-within {
+    color: hover;
+  }
+
+  .xl\:focus-within\:text-2:focus-within {
+    color: focus;
+  }
+
+  .xl\:focus-within\:text-3:focus-within {
+    color: before;
+  }
+
+  .xl\:focus-within\:text-4:focus-within {
+    color: after;
+  }
+
+  .xl\:focus-within\:text-5:focus-within {
+    color: hover_before;
+  }
+
+  .xl\:focus-within\:text-6:focus-within {
+    color: hover_after;
+  }
+
+  .xl\:focus-within\:text-7:focus-within {
+    color: focus_before;
+  }
+
   .xl\:focus-within\:text-transparent:focus-within {
     color: transparent;
   }
@@ -137208,6 +138469,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .xl\:hover\:text-0:hover {
+    color: responsive;
+  }
+
+  .xl\:hover\:text-1:hover {
+    color: hover;
+  }
+
+  .xl\:hover\:text-2:hover {
+    color: focus;
+  }
+
+  .xl\:hover\:text-3:hover {
+    color: before;
+  }
+
+  .xl\:hover\:text-4:hover {
+    color: after;
+  }
+
+  .xl\:hover\:text-5:hover {
+    color: hover_before;
+  }
+
+  .xl\:hover\:text-6:hover {
+    color: hover_after;
+  }
+
+  .xl\:hover\:text-7:hover {
+    color: focus_before;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -137624,6 +138917,38 @@ video {
   .xl\:hover\:text-pink-900:hover {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .xl\:focus\:text-0:focus {
+    color: responsive;
+  }
+
+  .xl\:focus\:text-1:focus {
+    color: hover;
+  }
+
+  .xl\:focus\:text-2:focus {
+    color: focus;
+  }
+
+  .xl\:focus\:text-3:focus {
+    color: before;
+  }
+
+  .xl\:focus\:text-4:focus {
+    color: after;
+  }
+
+  .xl\:focus\:text-5:focus {
+    color: hover_before;
+  }
+
+  .xl\:focus\:text-6:focus {
+    color: hover_after;
+  }
+
+  .xl\:focus\:text-7:focus {
+    color: focus_before;
   }
 
   .xl\:focus\:text-transparent:focus {
@@ -138885,12 +140210,24 @@ video {
     z-index: -5;
   }
 
+  .xl\:z-between {
+    z-index: -3;
+  }
+
   .xl\:focus-within\:z-behind:focus-within {
     z-index: -5;
   }
 
+  .xl\:focus-within\:z-between:focus-within {
+    z-index: -3;
+  }
+
   .xl\:focus\:z-behind:focus {
     z-index: -5;
+  }
+
+  .xl\:focus\:z-between:focus {
+    z-index: -3;
   }
 
   .xl\:gap-0 {
@@ -144382,7 +145719,7 @@ video {
   }
 
   .\32xl\:bg-ornament {
-    background-image: url(../img/pexels-negative-space-177555.jpg);
+    background-image: url(../img/pexels-char-1263891.jpg);
   }
 
   .\32xl\:from-transparent {
@@ -164226,6 +165563,38 @@ video {
     text-align: justify;
   }
 
+  .\32xl\:text-0 {
+    color: responsive;
+  }
+
+  .\32xl\:text-1 {
+    color: hover;
+  }
+
+  .\32xl\:text-2 {
+    color: focus;
+  }
+
+  .\32xl\:text-3 {
+    color: before;
+  }
+
+  .\32xl\:text-4 {
+    color: after;
+  }
+
+  .\32xl\:text-5 {
+    color: hover_before;
+  }
+
+  .\32xl\:text-6 {
+    color: hover_after;
+  }
+
+  .\32xl\:text-7 {
+    color: focus_before;
+  }
+
   .\32xl\:text-transparent {
     color: transparent;
   }
@@ -164642,6 +166011,38 @@ video {
   .\32xl\:text-pink-900 {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:text-0 {
+    color: responsive;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-1 {
+    color: hover;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-2 {
+    color: focus;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-3 {
+    color: before;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-4 {
+    color: after;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-5 {
+    color: hover_before;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-6 {
+    color: hover_after;
+  }
+
+  .group:hover .\32xl\:group-hover\:text-7 {
+    color: focus_before;
   }
 
   .group:hover .\32xl\:group-hover\:text-transparent {
@@ -165062,6 +166463,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .\32xl\:focus-within\:text-0:focus-within {
+    color: responsive;
+  }
+
+  .\32xl\:focus-within\:text-1:focus-within {
+    color: hover;
+  }
+
+  .\32xl\:focus-within\:text-2:focus-within {
+    color: focus;
+  }
+
+  .\32xl\:focus-within\:text-3:focus-within {
+    color: before;
+  }
+
+  .\32xl\:focus-within\:text-4:focus-within {
+    color: after;
+  }
+
+  .\32xl\:focus-within\:text-5:focus-within {
+    color: hover_before;
+  }
+
+  .\32xl\:focus-within\:text-6:focus-within {
+    color: hover_after;
+  }
+
+  .\32xl\:focus-within\:text-7:focus-within {
+    color: focus_before;
+  }
+
   .\32xl\:focus-within\:text-transparent:focus-within {
     color: transparent;
   }
@@ -165480,6 +166913,38 @@ video {
     color: rgba(131, 24, 67, var(--tw-text-opacity));
   }
 
+  .\32xl\:hover\:text-0:hover {
+    color: responsive;
+  }
+
+  .\32xl\:hover\:text-1:hover {
+    color: hover;
+  }
+
+  .\32xl\:hover\:text-2:hover {
+    color: focus;
+  }
+
+  .\32xl\:hover\:text-3:hover {
+    color: before;
+  }
+
+  .\32xl\:hover\:text-4:hover {
+    color: after;
+  }
+
+  .\32xl\:hover\:text-5:hover {
+    color: hover_before;
+  }
+
+  .\32xl\:hover\:text-6:hover {
+    color: hover_after;
+  }
+
+  .\32xl\:hover\:text-7:hover {
+    color: focus_before;
+  }
+
   .\32xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -165896,6 +167361,38 @@ video {
   .\32xl\:hover\:text-pink-900:hover {
     --tw-text-opacity: 1;
     color: rgba(131, 24, 67, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus\:text-0:focus {
+    color: responsive;
+  }
+
+  .\32xl\:focus\:text-1:focus {
+    color: hover;
+  }
+
+  .\32xl\:focus\:text-2:focus {
+    color: focus;
+  }
+
+  .\32xl\:focus\:text-3:focus {
+    color: before;
+  }
+
+  .\32xl\:focus\:text-4:focus {
+    color: after;
+  }
+
+  .\32xl\:focus\:text-5:focus {
+    color: hover_before;
+  }
+
+  .\32xl\:focus\:text-6:focus {
+    color: hover_after;
+  }
+
+  .\32xl\:focus\:text-7:focus {
+    color: focus_before;
   }
 
   .\32xl\:focus\:text-transparent:focus {
@@ -167157,12 +168654,24 @@ video {
     z-index: -5;
   }
 
+  .\32xl\:z-between {
+    z-index: -3;
+  }
+
   .\32xl\:focus-within\:z-behind:focus-within {
     z-index: -5;
   }
 
+  .\32xl\:focus-within\:z-between:focus-within {
+    z-index: -3;
+  }
+
   .\32xl\:focus\:z-behind:focus {
     z-index: -5;
+  }
+
+  .\32xl\:focus\:z-between:focus {
+    z-index: -3;
   }
 
   .\32xl\:gap-0 {
