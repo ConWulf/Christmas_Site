@@ -2,4 +2,8 @@
 
 @tailwind componenets;
 
+.link-hover:hover {
+    @apply text-lg text-green-600
+}
+
 @tailwind utilities;

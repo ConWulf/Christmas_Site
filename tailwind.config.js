@@ -5,9 +5,15 @@ module.exports = {
     zIndex: {
       'behind': '-5'
     },
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'ornament': "url(../img/pexels-negative-space-177555.jpg)"
+      })
+    },
   },
   variants: {
+    backgroundColor: ['active'],
+    boxShadow: ['responsive', 'hover', 'focus'],
     extend: {},
   },
   plugins: [],

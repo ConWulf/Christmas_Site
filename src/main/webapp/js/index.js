@@ -1,6 +1,9 @@
 import * as THREE from '../../../../node_modules/three/src/Three.js';
 
 $(document).ready(function () {
+
+
+    // for the background snow
     let scene, camera, renderer, snowGeo, snowflakes;
     const canvas = document.getElementById("background");
     const init = () => {
@@ -15,7 +18,7 @@ $(document).ready(function () {
 
         snowGeo = new THREE.Geometry();
         for (let i = 0; i < 4000; i++) {
-          let snow = new THREE.Vector3(
+            let snow = new THREE.Vector3(
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300,
@@ -54,8 +57,46 @@ $(document).ready(function () {
 
     $(window).on("resize", onResize);
 
+//user interactions
+    const songInput = $('#song');
+    const urlInput = $('#url');
+    const submitButton = $('#addSong');
+    const list = $('#songList');
 
+    const getURL = (url) => {
+        try {
+           return new URL(url);
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
+    const song = (song, url) => {
+        return `<li class="py-1">
+                    <a href="${getURL(url)}" target="_blank" class="link-hover">${song}</a>
+                </li>`
+    }
 
+    const formatInput = (input) => {
+        if (input.val().includes(' ')) {
+            return input.val()
+                .trim().split(" ")
+                .map(word => {
+                    let lowercaseWord = word.toLowerCase();
+                    return lowercaseWord[0].toUpperCase().concat(word.slice(1));
+                }).join(" ");
+        } else return input;
+    }
 
+    function addSong(e) {
+        e.preventDefault();
+        if (songInput.val() !== "" && urlInput.val() !== "") {
+            list.append(song(formatInput(songInput), urlInput.val().trim()))
+            urlInput.val("");
+            songInput.val("");
+        }
+
+    }
+
+    submitButton.on('click', addSong);
 })

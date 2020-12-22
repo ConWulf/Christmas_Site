@@ -8,25 +8,59 @@
 	<link rel="stylesheet" href="src/main/webapp/build/style.css">
 	<title>Christmas</title>
 </head>
-<body class="w-screen h-screen m-0">
+<body class="m-0">
 
-<nav class="h-12 bg-gray-500 col-span-3">
-	<div class="flex items-center justify-center h-full max-w-5xl m-auto">
-		<i class="far fa-snowflake pr-1 text-xl px-1"></i>
-		<div class="logo flex-grow text-xl">NORTH POLE</div>
-		<i class="fas fa-bars px-2 text-xl"></i>
-		<i class="fas fa-search px-2 text-xl"></i>
-	</div>
-</nav>
+	<nav class=" bg-green-400 py-2 px-1">
+		<div class="flex items-center justify-center h-full max-w-5xl m-auto">
+			<i class="far fa-snowflake pr-1 text-xl px-1"></i>
+			<div class="logo flex-grow text-xl">NORTH POLE</div>
+			<i class="fas fa-bars px-2 text-xl"></i>
+			<i class="fas fa-search px-2 text-xl"></i>
+		</div>
+	</nav>
 
+	<main class="" id="main">
+		<div class="relative bg-ornament bg-contain bg-bottom text-center py-3">
+			<h1 class="text-3xl">HAPPY HOLIDAYS</h1>
+			<i class="fas fa-holly-berry text-4xl mt-2"></i>
+		</div>
 
-<!--	<main class="" id="main">-->
-<!--	</main>-->
+		<div class="w-72 mx-auto mt-3">
+			<img src="src/main/webapp/img/pexels-brett-sayles-1708601.jpg" alt="">
+		</div>
+		<div class="text-center">
+			<h1 class="text-xl font-bold my-2">FAVORITE CHRISTMAS SONGS</h1>
+			<ul id="songList">
+				<li class="py-1">
+					<a href="https://www.youtube.com/watch?v=6KdLcd-sUQA" target="_blank" class="link-hover">You're A Mean One, Mr. Grinch (Pentatonix)</a>
+				</li>
+				<li class="py-1">
+					<a href="https://www.youtube.com/watch?v=DYzfubKRbEw" target="_blank" class="link-hover">Once Upon A December</a>
+				</li>
+				<li class="py-1">
+					<a href="https://www.youtube.com/watch?v=pFjdfjrtf1Q" target="_blank" class="link-hover">That's Christmas To Me (Pentatonix)</a>
+				</li>
+				<li class="py-1">
+					<a href="https://www.youtube.com/watch?v=Th_j7RUu2vM" target="_blank" class="link-hover">Making Christmas</a>
+				</li>
+			</ul>
+		</div>
 
-<canvas id="background" class="bg-gradient-to-b from-blue-400 via-indigo-500 to-red-500 opacity-50 w-full h-full"></canvas>
+		<form method="post" action="#" class="flex flex-col mt-5 items-center">
+			<label for="song">Enter A song title to add</label>
+			<input type="text" id="song" class="w-48 px-1 my-3 focus:outline-none">
+			<label for="url">Enter A song url to add</label>
+			<input type="text" id="url" class="w-48 px-1 my-3 focus:outline-none">
+			<button class="bg-indigo-600 w-32 py-2 rounded-lg text-sm hover:bg-indigo-500 hover:opacity-90 active:bg-indigo-700 focus:outline-none" id="addSong">SUBMIT SONG</button>
+		</form>
+		
+		
+	</main>
 
-<script src="https://kit.fontawesome.com/6e57a86385.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="src/main/webapp/js/index.js" type="module"></script>
+		<canvas id="background" class="bg-gradient-to-b from-blue-400 via-indigo-500 to-red-500 opacity-50 w-screen h-screen absolute top-0 z-behind"></canvas>
+
+	<script src="https://kit.fontawesome.com/6e57a86385.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="src/main/webapp/js/index.js" type="module"></script>
 </body>
 </html>
