@@ -19,29 +19,29 @@
 		</div>
 	</nav>
 
-	<div class="text-center mb-5 bg-red-400 py-2 bg-opacity-80">
+	<div class="text-center mb-5 bg-indigo-400 py-2 bg-opacity-80">
 		<h1 class="text-3xl relative z-5">HAPPY HOLIDAYS</h1>
 		<i class="fas fa-holly-berry text-4xl mt-2 relative z-5"></i>
 	</div>
 
 	<main class="md:flex md:justify-around pb-3" id="main">
-		<div class="w-72 mt-7 md:mt-3 mx-auto">
+		<div class="w-96 mt-7 md:mt-3 mx-auto">
 			<div class="w-full">
 				<img src="src/main/webapp/img/pexels-brett-sayles-1708601.jpg" alt="">
 			</div>
 			<div class="text-center">
 				<h1 class="text-xl font-bold my-2">FAVORITE CHRISTMAS SONGS</h1>
 				<ul id="songList">
-					<li class="py-1">
+					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
 						<a href="https://www.youtube.com/watch?v=6KdLcd-sUQA" target="_blank" class="link-hover">You're A Mean One, Mr. Grinch (Pentatonix)</a>
 					</li>
-					<li class="py-1">
+					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
 						<a href="https://www.youtube.com/watch?v=DYzfubKRbEw" target="_blank" class="link-hover">Once Upon A December</a>
 					</li>
-					<li class="py-1">
+					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
 						<a href="https://www.youtube.com/watch?v=pFjdfjrtf1Q" target="_blank" class="link-hover">That's Christmas To Me (Pentatonix)</a>
 					</li>
-					<li class="py-1">
+					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
 						<a href="https://www.youtube.com/watch?v=Th_j7RUu2vM" target="_blank" class="link-hover">Making Christmas</a>
 					</li>
 				</ul>
@@ -61,6 +61,8 @@
 
 	<canvas id="background" class="bg-gradient-to-b from-blue-400 via-indigo-500 				to-red-500 opacity-95 w-full h-full fixed inset-0 z-behind"></canvas>
 
+	<canvas id="konami" class="opacity-95 w-full h-full hidden"></canvas>
+	<div id="konami-text" class="absolute z-10 top-3 text-yellow-500 w-full text-center text-8xl tracking-widest hidden">He Sees ALL</div>
 
 	<script src="https://kit.fontawesome.com/6e57a86385.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

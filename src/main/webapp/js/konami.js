@@ -1,50 +1,69 @@
 import * as THREE from '../../../../node_modules/three/src/Three.js';
 
-$(document).ready(function () {
-    $('body').children('main, #background, nav, div').hide();
+
+$(document).ready(function (json) {
     let scene, camera, renderer, pyramid, controls;
 
-const init = () => {
-
+const initkonami = () => {
+const konamiCanvas = document.getElementById('konami');
     //set up scene
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75,
         window.innerWidth / window.innerHeight, 0.1,1000);
-
+camera.position.set(0,0,0);
     //set up webgl render
-    renderer = new THREE.WebGLRenderer({ antialias: true});
+    renderer = new THREE.WebGLRenderer({canvas: konamiCanvas, antialias: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor('#000');
-    document.body.append(renderer.domElement);
 
     const light = new THREE.AmbientLight('#fff', 1);
     scene.add(light);
 
-    // const geometry = new THREE.CylinderGeometry(0,2,3, 4);
-    // // const geometry = new THREE.ConeGeometry(2,3,4);
-    // // const geometry = new THREE.BoxGeometry(3,3,3);
+    const geometry = new THREE.BoxGeometry(3,3,3);
 
-    const geometry = new THREE.Geometry();
-
-    geometry.vertices.push(
-        new THREE.Vector3( -10,  10, 0 ),
-        new THREE.Vector3( -10, -10, 0 ),
-        new THREE.Vector3(  10, -10, 0 )
-    );
-
-    geometry.faces.push( new THREE.Face3( 0, 1, 2 ) );
-
-    const img = new THREE.TextureLoader().load('src/main/webapp/img/NicePng_bill-cipher-png_2032097.png');
+    const img = new THREE.TextureLoader().load('src/main/webapp/img/il_570xN.1623500519_1eeg.jpg');
     const material =[
-        new THREE.MeshPhongMaterial({color: 0xdddddd}),
+        new THREE.MeshLambertMaterial({map: img}),
+        new THREE.MeshLambertMaterial({map: img}),
+        new THREE.MeshLambertMaterial({color: 0xEFFFC8}),
+        new THREE.MeshLambertMaterial({color: 0xEFFFC8}),
+        new THREE.MeshLambertMaterial({map: img}),
+        new THREE.MeshLambertMaterial({map: img}),
+        new THREE.MeshLambertMaterial({map: img}),
     ]
 
     pyramid = new THREE.Mesh(geometry, material);
-    pyramid.position.set(0,0,-10);
+    pyramid.position.set(0,-2,-8);
     scene.add(pyramid);
-    console.log(pyramid);
+
+    // const textLoader = new THREE.FontLoader();
+    //
+    // textLoader.load( 'node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
+    //
+    //     const fontGeometry = new THREE.TextGeometry( 'He Sees ALL', {
+    //         font: font,
+    //         size: 1,
+    //         height: 5,
+    //         curveSegments: 12,
+    //         bevelEnabled: true,
+    //         bevelThickness: 10,
+    //         bevelSize: 8,
+    //         bevelOffset: 0,
+    //         bevelSegments: 5
+    //     } );
+    //
+    // const textMaterial = [
+    //     new THREE.MeshLambertMaterial({color: 0xeafb23})
+    // ]
+    // const textMesh = new THREE.Mesh(fontGeometry, textMaterial);
+    // scene.add(textMesh);
+    //
+    // } );
+
+
     animate()
 }
+    // initkonami();
 
 function animate() {
     renderer.render(scene, camera);
@@ -52,7 +71,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-init();
 
     const onResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -60,30 +78,25 @@ init();
         renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    $(window).on("resize", onResize);
+    let codeArr = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"]
+    let userArr = [];
+    $(document).on("keyup", function(e) {
+        userArr.push(e.key);
+        if (userArr.join(" ") === codeArr.join(" ")) {
+            $('body').children('main, #background, nav, div:not(#konami-text)').hide();
+            $('#konami, #konami-text').show();
+            $(window).on("resize", onResize);
+            initkonami();
+        } if (e.key === "Backspace") {
+            userArr = [];
+            $(window).off('resize', onResize);
+            $('body').children('main, #background, nav, div:not(#konami-text)').show();
+            $('#konami, #konami-text').hide();
+        }
+    });
 
-    // const url = 'https://api.github.com/users/';
-    // // jasmineannrivera/repos
-    // function getLanguages(userName) {
-    //     fetch(url+userName+'/repos')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             const lang = {}
-    //             data.map()
-    //             for (const obj of data) {
-    //                 if (lang[obj.language]) {
-    //                 lang[obj.language] += 1;
-    //                 } else {
-    //                     lang[obj.language] = 1;
-    //                 }
-    //
-    //             }
-    //             console.log(lang);
-    //         })
-    //
-    //
-    // }
-    // getLanguages('jasmineannrivera');
-
+    setInterval(function(){
+        userArr = []}, 30000)
 })
+
+
