@@ -1,5 +1,5 @@
 import * as THREE from '../../../../node_modules/three/src/Three.js';
-
+// $('#konami, #konami-text').hide();
 $(document).ready(function () {
 
 
@@ -12,9 +12,11 @@ $(document).ready(function () {
         camera = new THREE.PerspectiveCamera(75,
             window.innerWidth / window.innerHeight, 0.1,1000);
 
+        //set up webgl rendere
         renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
-        renderer.setSize(window.innerWidth, 100);
+        renderer.setSize(window.innerWidth, window.innerHeight);
         camera.position.set(0,0,0);
+
 
         snowGeo = new THREE.Geometry();
         for (let i = 0; i < 2000; i++) {
@@ -26,14 +28,20 @@ $(document).ready(function () {
             snow.acceleration = Math.random() * .2;
             snowGeo.vertices.push(snow)
         }
+        //
         let snowSprite = new THREE.TextureLoader().load('src/main/webapp/img/Snowflake-2.png');
         let snowMaterial = new THREE.PointsMaterial({
             color: 0xffffff,
-            size: 5,
+            size: 3,
             map: snowSprite
         });
         snowflakes = new THREE.Points(snowGeo, snowMaterial);
         scene.add(snowflakes);
+
+        const sun = new THREE.DirectionalLight(0xffffff, 2);
+        sun.position.set(1,1,0);
+        scene.add(sun);
+
         animate();
     }
 
@@ -50,9 +58,9 @@ $(document).ready(function () {
     }
 
     const onResize = () => {
-        camera.aspect = window.innerWidth / 100;
+        camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, 100);
+        renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
     $(window).on("resize", onResize);

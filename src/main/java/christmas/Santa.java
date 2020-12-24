@@ -11,6 +11,7 @@ public class Santa {
         List<String> toyList = new ArrayList<>();
         Map<String, List<String>> wishList= new HashMap<>();
         Scanner sc = new Scanner(System.in);
+
         do {
             System.out.println("what is your name?");
             String name = sc.nextLine();

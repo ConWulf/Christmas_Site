@@ -557,7 +557,7 @@ video {
   background-image: url(../img/pexels-char-1263891.jpg);
   background-size: cover;
   opacity: 0.5;
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
