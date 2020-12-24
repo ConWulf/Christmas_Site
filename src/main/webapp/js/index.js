@@ -70,6 +70,7 @@ $(document).ready(function () {
     const urlInput = $('#url');
     const submitButton = $('#addSong');
     const list = $('#songList');
+    const select = $('#select-song');
 
     const getURL = (url) => {
         try {
@@ -80,9 +81,7 @@ $(document).ready(function () {
     }
 
     const song = (song, url) => {
-        return `<li class="py-1">
-                    <a href="${getURL(url)}" target="_blank" class="link-hover">${song}</a>
-                </li>`
+        return `<a href="${getURL(url)}" target="_blank" class="block p-2 song-select">${song}</a>`
     }
 
     const formatInput = (input) => {
@@ -93,12 +92,13 @@ $(document).ready(function () {
                     let lowercaseWord = word.toLowerCase();
                     return lowercaseWord[0].toUpperCase().concat(word.slice(1));
                 }).join(" ");
-        } else return input;
+        } else return input.val();
     }
 
     function addSong(e) {
         e.preventDefault();
         if (songInput.val() !== "" && urlInput.val() !== "") {
+            console.log(formatInput(songInput));
             list.append(song(formatInput(songInput), urlInput.val().trim()))
             urlInput.val("");
             songInput.val("");
@@ -107,4 +107,27 @@ $(document).ready(function () {
     }
 
     submitButton.on('click', addSong);
+
+    let clicked = false;
+    select.on('click', function() {
+        clicked = !clicked;
+
+        if(clicked) {
+            list.removeClass('overflow-hidden');
+            list.addClass('overflow-auto');
+            list.animate({
+                height: '10rem'
+            }, 500);
+        }
+        else {
+            list.addClass('overflow-hidden');
+            list.removeClass('overflow-auto');
+            list.animate({
+                height: '3rem'
+            }, 500);
+        }
+    });
+
+
+
 })

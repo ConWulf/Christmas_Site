@@ -2,12 +2,30 @@
 
 @tailwind componenets;
 
-.link-hover:hover {
-    @apply text-lg text-green-600
-}
 
 .main-bg::before {
     @apply empty-content bg-ornament bg-cover fixed inset-0 z-behind opacity-50
 }
 
+.btn-indigo {
+    @apply bg-indigo-600 w-32 py-2 rounded-lg text-sm hover:to-indigo-400 hover:opacity-90 active:bg-indigo-700 focus:outline-none text-gray-300 transition duration-500 ease-in-out
+}
+
+.btn-indigo:focus {
+   @apply shadow-none
+}
+
+.song-select:hover {
+    @apply bg-indigo-600 text-gray-300
+}
 @tailwind utilities;
+
+@layer utilities {
+
+    .select-display {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+}

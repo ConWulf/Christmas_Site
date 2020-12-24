@@ -12,6 +12,19 @@ module.exports = {
       backgroundImage: theme => ({
         'ornament': "url(../img/pexels-char-1263891.jpg)"
       }),
+      borderWidth: ['hover', 'focus'],
+      boxShadow: ['active'],
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
+      grow: {
+        '0%, 100%': { height: '3rem' },
+        '50%': { height: '9rem' },
+      },
+      animation: {
+        grow: 'grow 3s ease-out',
+      },
       textColor: [
         'responsive',
         'hover',
