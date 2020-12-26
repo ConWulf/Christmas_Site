@@ -72,6 +72,7 @@ $(document).ready(function () {
     const list = $('#songList');
     const select = $('#select-song');
     const bodyBtn = $('#body-btn');
+    const selectList =  $('#songList>a')
     let clicked = false;
 
     const getURL = (url) => {
@@ -108,25 +109,23 @@ $(document).ready(function () {
 
     }
 
-    $('#songList>a').first().addClass('pointer-events-none');
-
     function selectAnimation() {
         clicked = !clicked;
 
         if(clicked) {
-            $('#songList>a').first().removeClass('pointer-events-none');
+            selectList.first().removeClass('pointer-events-none');
             bodyBtn.removeClass('hidden');
             list.removeClass('overflow-hidden');
-            list.addClass('overflow-auto z-10 pt-2');
+            list.addClass('overflow-auto z-10');
             list.animate({
-                height: '10rem'
+                height: '9.5rem'
             }, 500);
         }
         else {
-            $('#songList>a').first().removeClass('pointer-events-none');
+            selectList.first().addClass('pointer-events-none');
             bodyBtn.addClass('hidden');
             list.addClass('overflow-hidden');
-            list.removeClass('overflow-auto z-10 pt-2');
+            list.removeClass('overflow-auto z-10');
             list.animate({
                 height: '2.25rem'
             }, 500);
