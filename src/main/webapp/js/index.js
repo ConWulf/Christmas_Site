@@ -72,7 +72,8 @@ $(document).ready(function () {
     const list = $('#songList');
     const select = $('#select-song');
     const bodyBtn = $('#body-btn');
-    const selectList =  $('#songList>a')
+    const selectList =  $('#songList>a');
+    const arrow =  $('#arrow');
     let clicked = false;
 
     const getURL = (url) => {
@@ -115,20 +116,12 @@ $(document).ready(function () {
         if(clicked) {
             selectList.first().removeClass('pointer-events-none');
             bodyBtn.removeClass('hidden');
-            list.removeClass('overflow-hidden');
-            list.addClass('overflow-auto z-10');
-            list.animate({
-                height: '9.5rem'
-            }, 500);
+            arrow.addClass('invisible');
         }
         else {
             selectList.first().addClass('pointer-events-none');
+            arrow.removeClass('invisible');
             bodyBtn.addClass('hidden');
-            list.addClass('overflow-hidden');
-            list.removeClass('overflow-auto z-10');
-            list.animate({
-                height: '2.25rem'
-            }, 500);
         }
     }
 
