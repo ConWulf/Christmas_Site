@@ -70,6 +70,11 @@ $(document).ready(function () {
     const urlInput = $('#url');
     const submitButton = $('#addSong');
     const list = $('#songList');
+    const select = $('#select-song');
+    const bodyBtn = $('#body-btn');
+    const selectList =  $('#songList>a');
+    const arrow =  $('#arrow');
+    let clicked = false;
 
     const getURL = (url) => {
         try {
@@ -80,9 +85,7 @@ $(document).ready(function () {
     }
 
     const song = (song, url) => {
-        return `<li class="py-1">
-                    <a href="${getURL(url)}" target="_blank" class="link-hover">${song}</a>
-                </li>`
+        return `<a href="${getURL(url)}" target="_blank" class="block p-2 song-select">${song}</a>`
     }
 
     const formatInput = (input) => {
@@ -93,12 +96,13 @@ $(document).ready(function () {
                     let lowercaseWord = word.toLowerCase();
                     return lowercaseWord[0].toUpperCase().concat(word.slice(1));
                 }).join(" ");
-        } else return input;
+        } else return input.val();
     }
 
     function addSong(e) {
         e.preventDefault();
         if (songInput.val() !== "" && urlInput.val() !== "") {
+            console.log(formatInput(songInput));
             list.append(song(formatInput(songInput), urlInput.val().trim()))
             urlInput.val("");
             songInput.val("");
@@ -106,5 +110,28 @@ $(document).ready(function () {
 
     }
 
+    function selectAnimation() {
+        clicked = !clicked;
+
+        if(clicked) {
+            selectList.first().removeClass('pointer-events-none');
+            bodyBtn.removeClass('hidden');
+            arrow.addClass('invisible');
+        }
+        else {
+            selectList.first().addClass('pointer-events-none');
+            arrow.removeClass('invisible');
+            bodyBtn.addClass('hidden');
+        }
+    }
+
     submitButton.on('click', addSong);
+
+
+    select.on('click', selectAnimation);
+    list.on('click', selectAnimation);
+    bodyBtn.on('click', selectAnimation);
+
+
+
 })

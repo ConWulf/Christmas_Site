@@ -10,7 +10,9 @@
 </head>
 <body class="m-0">
 
-	<nav class=" bg-green-400 py-2 px-1">
+<button class="fixed inset-0 w-full h-full bg-black opacity-40 hidden cursor-default focus:outline-none" id="body-btn"></button>
+
+	<nav class="bg-indigo-500 py-2 px-1">
 		<div class="flex items-center justify-center h-full max-w-5xl m-auto">
 			<i class="far fa-snowflake pr-1 text-xl px-1"></i>
 			<div class="logo flex-grow text-xl">NORTH POLE</div>
@@ -19,47 +21,47 @@
 		</div>
 	</nav>
 
-	<div class="text-center mb-5 bg-indigo-400 py-2 bg-opacity-80">
+	<div class="text-center mb-5 bg-indigo-400 py-2 bg-opacity-80 hover:bg-black">
 		<h1 class="text-3xl relative z-5">HAPPY HOLIDAYS</h1>
 		<i class="fas fa-holly-berry text-4xl mt-2 relative z-5"></i>
 	</div>
 
-	<main class="md:flex md:justify-around pb-3" id="main">
-		<div class="w-96 mt-7 md:mt-3 mx-auto">
+	<main class="flex pb-3 flex-wrap items-between max-w-5xl mx-auto" id="main">
+		<div class="w-80 mt-7 md:mt-3 mx-auto px-2 mb-20">
 			<div class="w-full">
 				<img src="src/main/webapp/img/pexels-brett-sayles-1708601.jpg" alt="">
 			</div>
-			<div class="text-center">
-				<h1 class="text-xl font-bold my-2">FAVORITE CHRISTMAS SONGS</h1>
-				<ul id="songList">
-					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
-						<a href="https://www.youtube.com/watch?v=6KdLcd-sUQA" target="_blank" class="link-hover">You're A Mean One, Mr. Grinch (Pentatonix)</a>
-					</li>
-					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
-						<a href="https://www.youtube.com/watch?v=DYzfubKRbEw" target="_blank" class="link-hover">Once Upon A December</a>
-					</li>
-					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
-						<a href="https://www.youtube.com/watch?v=pFjdfjrtf1Q" target="_blank" class="link-hover">That's Christmas To Me (Pentatonix)</a>
-					</li>
-					<li class="py-1 my-2 bg-blue-400 rounded-full bg-opacity-70">
-						<a href="https://www.youtube.com/watch?v=Th_j7RUu2vM" target="_blank" class="link-hover">Making Christmas</a>
-					</li>
-				</ul>
+			<div class="h-32 text-center">
+				<h1 class="text-xl font-bold my-2">CHRISTMAS SONGS</h1>
+				<button class="relative z-10 btn-indigo w-14 h-8 rounded-full my-2 px-1 text-xs text-center border-2 focus:border-blue-400" id="select-song">
+					SONGS
+				</button>
+				<label for="songList"></label>
+				<div class="relative w-18 bg-gray-300 custom-select">
+					<select id="songList" class=" hidden">
+						<option class="" >You're A Mean One, Mr. Grinch </option>
+						<option class="">Once Upon A December</option>
+						<option class="">That's Christmas To Me</option>
+						<option class="">Making Christmas</option>
+					</select>
+				</div>
 			</div>
 		</div>
 
-		<form method="post" action="#" class="flex flex-col mt-2 items-center w-72 mx-auto">
+
+
+		<form method="post" action="#" class="flex flex-col items-center w-72 mx-auto">
 			<label for="song">Enter A song title to add</label>
 			<input type="text" id="song" class="w-48 px-1 my-3 focus:outline-none">
 			<label for="url">Enter A song url to add</label>
 			<input type="text" id="url" class="w-48 px-1 my-3 focus:outline-none">
-			<button class="bg-indigo-600 w-32 py-2 rounded-lg text-sm hover:bg-indigo-500 				hover:opacity-90 active:bg-indigo-700 focus:outline-none" id="addSong">SUBMIT SONG</button>
+			<button class="btn-indigo hover:shadow-lg" id="addSong">SUBMIT SONG</button>
 		</form>
 
 	</main>
 
 
-	<canvas id="background" class="bg-gradient-to-b from-blue-400 via-indigo-500 				to-red-500 opacity-95 w-full h-full fixed inset-0 z-behind"></canvas>
+	<canvas id="background" class="bg-gradient-to-b from-blue-400 via-indigo-500 to-red-500 opacity-70 w-full h-full fixed inset-0 z-behind"></canvas>
 
 	<canvas id="konami" class="opacity-95 w-full h-full hidden"></canvas>
 	<div id="konami-text" class="absolute z-10 top-3 text-yellow-500 w-full text-center text-8xl tracking-widest hidden">He Sees ALL</div>
