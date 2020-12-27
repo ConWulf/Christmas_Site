@@ -32,18 +32,16 @@
 				<img src="src/main/webapp/img/pexels-brett-sayles-1708601.jpg" alt="">
 			</div>
 			<div class="h-32 text-center">
-				<h1 class="text-xl font-bold my-2">CHRISTMAS SONGS</h1>
-				<button class="relative z-10 btn-indigo w-14 h-8 rounded-full my-2 px-1 text-xs text-center border-2 focus:border-blue-400" id="select-song">
+				<h1 class="text-xl font-bold my-3">CHRISTMAS SONGS</h1>
+				<button class="relative flex justify-between items-center z-10 btn-indigo w-20 h-8 rounded-full px-1 text-xs text-center border-2 focus:border-gray-800" id="select-song">
 					SONGS
+					<i class="fas fa-chevron-down px-1 inline-block text-white" id="arrow"></i>
 				</button>
-				<label for="songList"></label>
-				<div class="relative w-18 bg-gray-300 custom-select">
-					<select id="songList" class=" hidden">
-						<option class="" >You're A Mean One, Mr. Grinch </option>
-						<option class="">Once Upon A December</option>
-						<option class="">That's Christmas To Me</option>
-						<option class="">Making Christmas</option>
-					</select>
+				<div id="songList" class="relative z-10 top-2 text-sm bg-white rounded-lg shadow-xl w-64 text-justify h-40 py-1 overflow-auto select-container hidden">
+					<a href="https://www.youtube.com/watch?v=6KdLcd-sUQA" target="_blank" class="flex justify-between items-center p-2 song-select mt-1" >You're A Mean One, Mr. Grinch</a>
+					<a href="https://www.youtube.com/watch?v=DYzfubKRbEw" target="_blank" class="block p-2 song-select">Once Upon A December</a>
+					<a href="https://www.youtube.com/watch?v=pFjdfjrtf1Q" target="_blank" class="block p-2 song-select">That's Christmas To Me</a>
+					<a href="https://www.youtube.com/watch?v=Th_j7RUu2vM" target="_blank" class="block p-2 song-select">Making Christmas</a>
 				</div>
 			</div>
 		</div>

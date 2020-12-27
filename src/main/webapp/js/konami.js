@@ -36,34 +36,8 @@ camera.position.set(0,0,0);
     pyramid.position.set(0,-2,-8);
     scene.add(pyramid);
 
-    // const textLoader = new THREE.FontLoader();
-    //
-    // textLoader.load( 'node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
-    //
-    //     const fontGeometry = new THREE.TextGeometry( 'He Sees ALL', {
-    //         font: font,
-    //         size: 1,
-    //         height: 5,
-    //         curveSegments: 12,
-    //         bevelEnabled: true,
-    //         bevelThickness: 10,
-    //         bevelSize: 8,
-    //         bevelOffset: 0,
-    //         bevelSegments: 5
-    //     } );
-    //
-    // const textMaterial = [
-    //     new THREE.MeshLambertMaterial({color: 0xeafb23})
-    // ]
-    // const textMesh = new THREE.Mesh(fontGeometry, textMaterial);
-    // scene.add(textMesh);
-    //
-    // } );
-
-
     animate()
 }
-    // initkonami();
 
 function animate() {
     renderer.render(scene, camera);
