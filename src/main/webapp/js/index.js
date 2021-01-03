@@ -19,13 +19,13 @@ $(document).ready(function () {
 
 
         snowGeo = new THREE.Geometry();
-        for (let i = 0; i < 2000; i++) {
+        for (let i = 0; i < 1000; i++) {
             let snow = new THREE.Vector3(
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300,
             );
-            snow.acceleration = Math.random() * .2;
+            snow.acceleration = Math.random() * .2 + .01;
             snowGeo.vertices.push(snow)
         }
         //
@@ -72,8 +72,7 @@ $(document).ready(function () {
     const list = $('#songList');
     const select = $('#select-song');
     const bodyBtn = $('#body-btn');
-    const selectList =  $('#songList>a');
-    const arrow =  $('#arrow');
+    const arrow = $('#arrow');
     let clicked = false;
 
     const getURL = (url) => {
@@ -102,7 +101,6 @@ $(document).ready(function () {
     function addSong(e) {
         e.preventDefault();
         if (songInput.val() !== "" && urlInput.val() !== "") {
-            console.log(formatInput(songInput));
             list.append(song(formatInput(songInput), urlInput.val().trim()))
             urlInput.val("");
             songInput.val("");
@@ -112,15 +110,14 @@ $(document).ready(function () {
 
     function selectAnimation() {
         clicked = !clicked;
-
         if(clicked) {
-            selectList.first().removeClass('pointer-events-none');
+            arrow.addClass('fa-rotate-180')
+            list.removeClass('hidden');
             bodyBtn.removeClass('hidden');
-            arrow.addClass('invisible');
         }
-        else {
-            selectList.first().addClass('pointer-events-none');
-            arrow.removeClass('invisible');
+        else{
+            arrow.removeClass('fa-rotate-180');
+            list.addClass('hidden');
             bodyBtn.addClass('hidden');
         }
     }
@@ -129,7 +126,6 @@ $(document).ready(function () {
 
 
     select.on('click', selectAnimation);
-    list.on('click', selectAnimation);
     bodyBtn.on('click', selectAnimation);
 
 
