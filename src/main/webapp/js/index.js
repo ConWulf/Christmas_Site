@@ -70,10 +70,45 @@ $(document).ready(function () {
     const urlInput = $('#url');
     const submitButton = $('#addSong');
     const list = $('#songList');
-    const select = $('#select-song');
-    const bodyBtn = $('#body-btn');
-    const arrow = $('#arrow');
-    let clicked = false;
+
+    list.slick({
+        prevArrow: `<button type="button" class="slick-prev carousel_btn">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>`,
+        nextArrow: `<button type="button" class="slick-next carousel_btn">
+                            <i class="fas fa-arrow-right"></i>   
+                        </button>`,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        mobileFirst: true,
+        centerPadding: '10px',
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    centerPadding: '0',
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 1225,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            }
+        ]
+    });
+
 
     const getURL = (url) => {
         try {
@@ -82,7 +117,6 @@ $(document).ready(function () {
             console.log(e)
         }
     }
-
     const song = (song, url) => {
         return `<a href="${getURL(url)}" target="_blank" class="block p-2 song-select">${song}</a>`
     }
@@ -108,25 +142,27 @@ $(document).ready(function () {
 
     }
 
-    function selectAnimation() {
-        clicked = !clicked;
-        if(clicked) {
-            arrow.addClass('fa-rotate-180')
-            list.removeClass('hidden');
-            bodyBtn.removeClass('hidden');
-        }
-        else{
-            arrow.removeClass('fa-rotate-180');
-            list.addClass('hidden');
-            bodyBtn.addClass('hidden');
-        }
-    }
+    // fetch('http://localhost:3000/songs').then(res => res.json()).then(console.log)
+    // fetch().then(res => res.json()).then(console.log)
 
     submitButton.on('click', addSong);
 
+    const renderVideos = (songs) => {
+        let html = ''
+        songs.forEach(song => {
+        const {url} = song;
+         html += `<div class="inline-flex justify-center">
+        <iframe src="${url}">You're A Mean One, Mr. Grinch</iframe>
+            </div>`;
+        });
+        return html;
+    }
 
-    select.on('click', selectAnimation);
-    bodyBtn.on('click', selectAnimation);
+    fetch('http://localhost:3000/songs')
+        .then(res => res.json())
+        .then(data => {
+            list.slick('slickAdd', renderVideos(data))
+        });
 
 
 

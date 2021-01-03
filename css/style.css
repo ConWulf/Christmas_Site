@@ -15,18 +15,6 @@
    @apply shadow-none
 }
 
-.select-container::-webkit-scrollbar {
-    width: 0.5rem;
-}
-
-.select-container::-webkit-scrollbar-track {
-    @apply shadow-inner
-}
-
-.select-container::-webkit-scrollbar-thumb {
-    @apply bg-gray-400 rounded-full
-}
-
 .song-select:hover {
     @apply bg-indigo-600 text-gray-300
 }
@@ -34,42 +22,21 @@
 .rotate-arrow {
     @apply transition duration-500
 }
+
+.carousel_btn {
+    position:absolute;
+    z-index: 20;
+}
+
+.slick-next {
+    @apply right-0
+}
+
+.slick-prev {
+    @apply left-0
+}
 @tailwind utilities;
 
 @layer utilities {
-
-    .select-display {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    .select-selected:after {
-        position: absolute;
-        content: "";
-        top: 14px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-    }
-
-    /* style the items (options), including the selected item: */
-    .select-items div,.select-selected {
-        color: #ffffff;
-        padding: 8px 16px;
-        border: 1px solid transparent;
-        cursor: pointer;
-    }
-
-    /* Style items (options): */
-    .select-items {
-        position: absolute;
-        background-color: DodgerBlue;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 99;
-    }
 
 }
