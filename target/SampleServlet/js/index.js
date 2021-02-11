@@ -11,7 +11,7 @@ $(document).ready(function () {
         camera = new THREE.PerspectiveCamera(75,
             window.innerWidth / window.innerHeight, 0.1,1000);
 
-        //set up webgl render
+        //set up webgl rendere
         renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.position.set(0,0,0);
@@ -74,7 +74,7 @@ $(document).ready(function () {
     list.slick({
         prevArrow: `<button type="button" class="slick-prev carousel_btn">
                             <i class="fas fa-arrow-left"></i>
-                     </button>`,
+                        </button>`,
         nextArrow: `<button type="button" class="slick-next carousel_btn">
                             <i class="fas fa-arrow-right"></i>   
                         </button>`,
@@ -151,13 +151,12 @@ $(document).ready(function () {
                         headers: header,
                         body: JSON.stringify({id: ++id, title: songInput.val(), url: urlInput.val()})
                     })
-                    .then(() => {
-                        urlInput.val("");
-                        songInput.val("");
-                        console.log("song added");
-                    });
+                        .then(res => {
+                            console.log(res);
+                        });
                 });
-
+                            // urlInput.val("");
+                            // songInput.val("");
 
         }
 

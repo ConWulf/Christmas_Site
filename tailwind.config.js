@@ -1,7 +1,11 @@
 const plugin = require("tailwindcss/plugin");
 require('tailwindcss-aspect-ratio');
 module.exports = {
-  purge: [],
+  purge: [
+      "./src/main/webapp/js/index.js",
+      "./src/main/webapp/js/konami.js",
+      "index.html"
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     zIndex: {
