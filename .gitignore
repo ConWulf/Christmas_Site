@@ -5,3 +5,4 @@ out/*
 node_modules
 keys.js
 target
+src/main/webapp/build/style.css
